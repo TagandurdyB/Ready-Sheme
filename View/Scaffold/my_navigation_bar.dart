@@ -23,15 +23,41 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
         unselectedItemColor: Colors.grey[400],
         selectedItemColor: Colors.white,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.explore_outlined), label: "Explore"),
+              icon: Icon(Icons.home),
+              activeIcon: Icon(
+                Icons.home_rounded,
+                color: Colors.white,
+              ),
+              label: "Home"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.add_circle_outline), label: "Add"),
+              icon: Icon(Icons.explore_outlined),
+              activeIcon: Icon(
+                Icons.explore,
+                color: Colors.white,
+              ),
+              label: "Explore"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.subscriptions_outlined), label: "Subscriptions"),
+              icon: Icon(Icons.add_circle_outline),
+              activeIcon: Icon(
+                Icons.add_circle,
+                color: Colors.white,
+              ),
+              label: "Add"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.video_library_outlined), label: "Library"),
+              icon: Icon(Icons.subscriptions_outlined),
+              activeIcon: Icon(
+                Icons.subscriptions,
+                color: Colors.white,
+              ),
+              label: "Subscriptions"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.video_library_outlined),
+              activeIcon: Icon(
+                Icons.video_library,
+                color: Colors.white,
+              ),
+              label: "Library"),
         ]);
   }
 }

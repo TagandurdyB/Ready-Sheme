@@ -39,7 +39,7 @@ class ScaffoldAll extends StatelessWidget {
           ),
         ),
       ),
-      drawer: const MyDrawer(),
+      drawer: MyDrawer(),
       body: body,
       bottomNavigationBar: const MyBottomNavigationBar(),
     );

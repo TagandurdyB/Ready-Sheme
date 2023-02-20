@@ -1,19 +1,24 @@
 import 'package:demo1/ViewModel/Providers/provider_theme.dart';
 import 'package:flutter/material.dart';
 
+import '../../ViewModel/routes_vm.dart';
 import '../../ViewModel/size_vm.dart';
 import '../Widgets/draw_bar_btn.dart';
 import '../Widgets/my_container.dart';
 
+// ignore: must_be_immutable
 class MyDrawer extends StatelessWidget {
   final Widget? title;
-  const MyDrawer({
+  MyDrawer({
     super.key,
     this.title,
   });
 
+  late BuildContext contextM;
+
   @override
   Widget build(BuildContext context) {
+    contextM = context;
     return Drawer(
       child: Column(children: [
         Container(
@@ -31,12 +36,18 @@ class MyDrawer extends StatelessWidget {
               child: Column(
                 children: [
                   DrawBarBtn(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, Rout.home, (route) => false);
+                    },
                     //  titleLeft: SWi * 0.15,
                     leading: draverIcon(Icons.home),
                     title: const Text("Baş sahypa"),
                     trailing: IconButton(
-                        onPressed: () {}, icon: const Icon(Icons.sunny)),
+                        onPressed: () {
+                          ProcessTheme(context).tongleTheme;
+                        },
+                        icon: DistributorTheme(context).icons.changeMod),
                   ),
                 ],
               ),
@@ -55,7 +66,7 @@ class MyDrawer extends StatelessWidget {
         borderWidth: sizeWidth * 0.003,
         width: sizeWidth * 0.11,
         height: sizeWidth * 0.11,
-        color: ProviderTheme().colors.canvas,
+        color: DistributorTheme(contextM).colors.canvas,
         child: Icon(
           icon,
           color: const Color(0xff6A00FF),

@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import '../View/Pages/page_logo.dart';
 
 class Rout {
+  // Home never change!!!
+  static const String home = "/HomePage";
   static const String logo = "/LogoPage";
-    static const String home = "/HomePage";
-
 
   static Map<String, Widget Function(dynamic)> pages = {
     logo: (context) => const LogoPage(),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../ViewModel/routes_vm.dart';
+
 class ProviderAppBar extends ChangeNotifier {
   Widget? _leading;
   Widget? get leading => _leading;
@@ -23,11 +25,9 @@ class ProviderAppBar extends ChangeNotifier {
     _bottomDrawer = !_bottomDrawer; //situation;
     if (_bottomDrawer) {
       _leading = null;
+
       _bottomHeight = kToolbarHeight + (kToolbarHeight * 0.5);
     } else {
-      if (!_drawer) {
-        _leading = const BackButton();
-      }
       _bottomHeight = kToolbarHeight;
     }
     notifyListeners();
@@ -43,14 +43,24 @@ class ProcessAppBar {
   final BuildContext context;
   ProcessAppBar(this.context);
 
-  dynamic _getProvider(BuildContext context) {
+  dynamic _changeProvider(BuildContext context) {
     return Provider.of<ProviderAppBar>(context, listen: false);
   }
 
-  void leading(Widget? lead) => _getProvider(context).changeLeading(lead);
-  void drawer(bool situation) => _getProvider(context).changeDrawer(situation);
-  void bottomDrawer(bool situation) =>
-      _getProvider(context).changeBottomDrawer(situation);
+  void leading(Widget? lead) => _changeProvider(context).changeLeading(lead);
+  void drawer(bool situation) =>
+      _changeProvider(context).changeDrawer(situation);
+  void bottomDrawer(bool situation) {
+    _changeProvider(context).changeBottomDrawer(situation);
+
+    if (situation &&
+        _changeProvider(context).leading == null &&
+        ModalRoute.of(context)!.settings.name == Rout.home) {
+      leading(const SizedBox());
+    } else {
+      leading(null);
+    }
+  }
 }
 
 class DistributorAppBar {
