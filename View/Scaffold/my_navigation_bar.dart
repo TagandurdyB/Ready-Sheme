@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:synag/View/Scaffold/provider_navigation_bar.dart';
 
 class MyBottomNavigationBar extends StatefulWidget {
   const MyBottomNavigationBar({super.key});
@@ -18,6 +19,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
           setState(() {
             _selectIndex = index;
           });
+         ProcessNavigationBar(context).screenIndex(index); 
         },
         type: BottomNavigationBarType.fixed,
         unselectedItemColor: Colors.grey[400],

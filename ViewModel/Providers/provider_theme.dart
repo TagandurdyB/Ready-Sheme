@@ -1,7 +1,7 @@
-import 'package:demo1/Model/Icons_model.dart';
-import 'package:demo1/Model/colors_model.dart';
-import 'package:demo1/Model/shadows_model.dart';
-import 'package:demo1/Model/styles_model.dart';
+import '/Model/Icons_model.dart';
+import '/Model/colors_model.dart';
+import '/Model/shadows_model.dart';
+import '/Model/styles_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

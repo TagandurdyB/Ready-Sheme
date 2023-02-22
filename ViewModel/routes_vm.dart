@@ -1,4 +1,4 @@
-import 'package:demo1/View/Pages/page_home.dart';
+import '/View/Pages/page_home.dart';
 import 'package:flutter/material.dart';
 
 import '../View/Pages/page_logo.dart';

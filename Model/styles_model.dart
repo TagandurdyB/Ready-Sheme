@@ -1,6 +1,6 @@
 // ignore_for_file: overridden_fields
 
-import 'package:demo1/ViewModel/size_vm.dart';
+import '/ViewModel/size_vm.dart';
 import 'package:flutter/material.dart';
 
 class ThemeStyle {

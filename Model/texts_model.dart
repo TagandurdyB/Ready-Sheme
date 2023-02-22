@@ -1,4 +1,4 @@
-import 'package:demo1/ViewModel/Providers/provider_theme.dart';
+import '/ViewModel/Providers/provider_theme.dart';
 import 'package:flutter/material.dart';
 
 class Texts {

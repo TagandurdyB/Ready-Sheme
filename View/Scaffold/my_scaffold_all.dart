@@ -1,5 +1,5 @@
-import 'package:demo1/View/Scaffold/provider_app_bar.dart';
-import 'package:demo1/ViewModel/Providers/provider_theme.dart';
+import '/View/Scaffold/provider_app_bar.dart';
+import '/ViewModel/Providers/provider_theme.dart';
 import 'package:flutter/material.dart';
 import '/View/Scaffold/my_navigation_bar.dart';
 import 'my_app_bar.dart';

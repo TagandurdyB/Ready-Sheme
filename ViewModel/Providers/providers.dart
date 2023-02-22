@@ -1,5 +1,7 @@
-import 'package:demo1/View/Scaffold/provider_app_bar.dart';
-import 'package:demo1/ViewModel/Providers/provider_theme.dart';
+import 'package:synag/View/Scaffold/provider_navigation_bar.dart';
+
+import '/View/Scaffold/provider_app_bar.dart';
+import '/ViewModel/Providers/provider_theme.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
@@ -10,6 +12,9 @@ class MyProvoders {
     ),
     ChangeNotifierProvider<ProviderAppBar>(
       create:(context)=> ProviderAppBar(),
+    ),
+    ChangeNotifierProvider<ProviderNavigationBar>(
+      create:(context)=> ProviderNavigationBar(),
     ),
   ];
 }
