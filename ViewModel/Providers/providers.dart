@@ -1,4 +1,4 @@
-import 'package:synag/View/Scaffold/provider_navigation_bar.dart';
+import '/View/Scaffold/provider_navigation_bar.dart';
 
 import '/View/Scaffold/provider_app_bar.dart';
 import '/ViewModel/Providers/provider_theme.dart';
