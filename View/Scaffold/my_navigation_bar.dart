@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:synag/View/Scaffold/provider_navigation_bar.dart';
+import '/View/Scaffold/provider_navigation_bar.dart';
 
 class MyBottomNavigationBar extends StatefulWidget {
   const MyBottomNavigationBar({super.key});
