@@ -49,6 +49,12 @@ class MyDrawer extends StatelessWidget {
                         },
                         icon: DistributorTheme(context).icons.changeMod),
                   ),
+                  DrawBarBtn(
+                    onTap: () => Navigator.pushNamed(context, Rout.about),
+                    //  titleLeft: SWi * 0.15,
+                    leading: draverIcon(Icons.info),
+                    title: const Text("Barada"),
+                  ),
                 ],
               ),
             ),
