@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:telfun/View/Scaffold/my_scaffold_all.dart';
-import 'package:telfun/View/Widgets/my_container.dart';
+import '/View/Scaffold/my_scaffold_all.dart';
+import '/View/Widgets/my_container.dart';
 
 class AboutPage extends StatelessWidget {
   const AboutPage({super.key});
