@@ -1,4 +1,4 @@
-import 'package:telfun/View/Pages/page_about.dart';
+import '/View/Pages/page_about.dart';
 
 import '/View/Pages/page_home.dart';
 import 'package:flutter/material.dart';
