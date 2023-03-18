@@ -1,3 +1,4 @@
+import '../../ViewModel/size_vm.dart';
 import '/View/Scaffold/provider_app_bar.dart';
 import '/ViewModel/Providers/provider_theme.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,8 @@ class ScaffoldAll extends StatelessWidget {
       {required this.body, super.key, this.funcBackBtn, this.scaffoldKey});
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    MySize().changeSize(size.width, size.height);
     return Scaffold(
       key: scaffoldKey,
       appBar: PreferredSize(

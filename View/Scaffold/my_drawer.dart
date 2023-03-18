@@ -65,7 +65,7 @@ class MyDrawer extends StatelessWidget {
   }
 
   Widget draverIcon(IconData icon) {
-    final double sizeWidth = MySize.width;
+    final double sizeWidth = MySize.arentir;
     return MyContainer(
         shape: sizeWidth * 0.02,
         borderColor: const Color(0xff9245FF),

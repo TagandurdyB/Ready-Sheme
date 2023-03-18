@@ -19,7 +19,7 @@ class DrawBarBtn extends StatelessWidget {
       this.width = double.infinity});
   @override
   Widget build(BuildContext context) {
-    final double sizeWidth = MySize.width;
+    final double sizeWidth = MySize.arentir;
     leading = leading ?? Container();
     title = title ?? Container();
     trailing = trailing ?? Container();

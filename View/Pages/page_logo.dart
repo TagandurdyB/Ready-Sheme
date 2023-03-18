@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../ViewModel/routes_vm.dart';
-import '../../ViewModel/size_vm.dart';
 import '../../ViewModel/time_vm.dart';
 
 class LogoPage extends StatefulWidget {
@@ -20,8 +19,6 @@ class _LogoPageState extends State<LogoPage> {
 
   @override
   Widget build(BuildContext context) {
-    final size=MediaQuery.of(context).size;
-    MySize().changeSize(size.width,size.height);
     return Scaffold(
       body: Center(child: buildLogo()),
     );
