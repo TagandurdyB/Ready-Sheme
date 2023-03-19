@@ -69,6 +69,7 @@ class ScaffoldAll extends StatelessWidget {
       ),
       drawer: MyDrawer(),
       body: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Visibility(
               visible: !MyPlatform.isMobil,

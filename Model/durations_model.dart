@@ -1,3 +1,3 @@
 class MyDurations {
-   Duration logo =const Duration(seconds: 3);
+   Duration logo =const Duration(seconds: 4);
 }

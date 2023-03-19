@@ -6,4 +6,5 @@ class Texts {
   final Styles themeStyle;
   Texts({required this.themeStyle});
   Text get mainTitle => Text(Worlds.mainTitle, style: themeStyle.appBar);
+  Text get avtor => Text(Worlds.avtor, style: themeStyle.avtor);
 }

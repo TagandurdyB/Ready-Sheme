@@ -8,7 +8,9 @@ class Styles {
   final ThemeColor themeColor;
   Styles({required this.themeColor});
   TextStyle get appBar =>
-      TextStyle(color: themeColor.text, fontSize: Nums().appBar);
+      TextStyle(color: themeColor.text, fontSize: Nums.appBar);
   TextStyle get input =>
-      TextStyle(color: themeColor.text, fontSize: Nums().input);
+      TextStyle(color: themeColor.text, fontSize: Nums.input);
+  TextStyle get avtor =>
+      TextStyle(color: themeColor.text, fontSize: Nums.avtor);
 }

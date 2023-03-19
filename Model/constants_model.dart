@@ -1,6 +1,8 @@
 import '../ViewModel/size_vm.dart';
 
 class Worlds {
+  static const String avtor = "Tagandurdy Baýramdurdyýew Mekanowiç";
+
   static const String mainTitle = "Main Title";
 
   final String naviHome = "Home";
@@ -13,6 +15,7 @@ class Worlds {
 }
 
 class Nums {
-  double appBar = MySize.arentir * 0.06;
-  double input = MySize.arentir * 0.04;
+  static double avtor = MySize.arentir * 0.05;
+  static double appBar = MySize.arentir * 0.06;
+  static double input = MySize.arentir * 0.04;
 }
