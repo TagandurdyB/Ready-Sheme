@@ -16,6 +16,6 @@ class Worlds {
 
 class Nums {
   static double avtor = MySize.arentir * 0.05;
-  static double appBar = MySize.arentir * 0.06;
+  double appBar = MySize.arentir * 0.06;
   static double input = MySize.arentir * 0.04;
 }
