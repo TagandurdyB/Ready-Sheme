@@ -36,10 +36,8 @@ class MyDrawer extends StatelessWidget {
               child: Column(
                 children: [
                   DrawBarBtn(
-                    onTap: () {
-                      Navigator.pushNamedAndRemoveUntil(
-                          context, Rout.home, (route) => false);
-                    },
+                    onTap: () => Navigator.pushNamedAndRemoveUntil(
+                        context, Rout.home, (route) => false),
                     //  titleLeft: SWi * 0.15,
                     leading: draverIcon(Icons.home),
                     title: const Text("Baş sahypa"),
@@ -49,7 +47,7 @@ class MyDrawer extends StatelessWidget {
                         },
                         icon: DistributorTheme(context).icons.changeMod),
                   ),
-                   buildBtn(Rout.about, Icons.info, "Barada"),
+                  buildBtn(Rout.about, Icons.info, "Barada"),
                 ],
               ),
             ),
@@ -60,8 +58,13 @@ class MyDrawer extends StatelessWidget {
   }
 
   Widget buildBtn(String route, IconData icon, String name) {
+    final String? active = ModalRoute.of(context)!.settings.name;
     return DrawBarBtn(
-      onTap: () => Navigator.pushNamed(context, route),
+      onTap: () {
+        if (active != route) {
+          Navigator.pushNamed(context, route);
+        }
+      },
       //  titleLeft: SWi * 0.15,
       leading: draverIcon(icon),
       title: Text(name),

@@ -10,7 +10,8 @@ class DrawBarBtn extends StatelessWidget {
   Color color;
   Function? onTap;
   DrawBarBtn(
-      {super.key, this.leading,
+      {super.key,
+      this.leading,
       this.title,
       this.trailing,
       this.titleLeft,
@@ -25,6 +26,7 @@ class DrawBarBtn extends StatelessWidget {
     trailing = trailing ?? Container();
     return GestureDetector(
       onTap: () {
+        Navigator.pop(context);
         if (onTap != null) {
           onTap!();
         }
@@ -36,7 +38,7 @@ class DrawBarBtn extends StatelessWidget {
           color: color,
         ),
         width: width,
-        padding:const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(8),
         child: Stack(
           alignment: Alignment.center,
           children: [

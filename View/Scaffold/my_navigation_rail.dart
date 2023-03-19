@@ -24,10 +24,15 @@ class _MyMyNavigationRailState extends State<MyNavigationRail> {
       extended: widget.extended,
       elevation: 5,
       backgroundColor: DistributorTheme(context).colors.navigationBg,
+
       selectedIconTheme: IconThemeData(
           color: DistributorTheme(context).colors.navigatActiveIcon),
+      selectedLabelTextStyle: DistributorTheme(context).styles.appBar,    
+
       unselectedIconTheme: IconThemeData(
           color: DistributorTheme(context).colors.navigatUnactiveIcon),
+      unselectedLabelTextStyle: DistributorTheme(context).styles.input,
+      
       selectedIndex: _selectIndex,
       onDestinationSelected: (index) {
         setState(() {
