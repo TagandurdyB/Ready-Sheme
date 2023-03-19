@@ -1,6 +1,9 @@
-import '/ViewModel/Providers/provider_theme.dart';
+import 'constants_model.dart';
 import 'package:flutter/material.dart';
+import '/Model/styles_model.dart';
 
 class Texts {
-  Text mainTitle = Text("Main Title", style: ProviderTheme().styles.appBar);
+  final Styles themeStyle;
+  Texts({required this.themeStyle});
+  Text get mainTitle => Text(Worlds.mainTitle, style: themeStyle.appBar);
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '/View/Scaffold/provider_navigation_bar.dart';
+import '../../ViewModel/Providers/provider_navigation.dart';
 import '/View/Screens/first_screen.dart';
 import '/View/Screens/second_screen.dart';
 
@@ -24,7 +24,7 @@ class HomeScreens extends StatelessWidget {
           (index) => Builder(
                 builder: (context) => Offstage(
                   offstage:
-                      index != DistributorNavigationBar(context).screenIndex,
+                      index != DistributorNavigation(context).screenIndex,
                   child: Scaffold(
                     body: screens[index],
                   ),

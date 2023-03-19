@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class ProviderNavigationBar extends ChangeNotifier {
+class ProviderNavigation extends ChangeNotifier {
 
   int _selectScreen = 0;
   int get selectScreen => _selectScreen;
@@ -13,24 +13,24 @@ class ProviderNavigationBar extends ChangeNotifier {
 
 /*=====================================================================================*/
 
-class ProcessNavigationBar {
+class ProcessNavigation {
   final BuildContext context;
-  ProcessNavigationBar(this.context);
+  ProcessNavigation(this.context);
 
   dynamic _getProvider(BuildContext context) {
-    return Provider.of<ProviderNavigationBar>(context, listen: false);
+    return Provider.of<ProviderNavigation>(context, listen: false);
   }
 
   void screenIndex(int index) => _getProvider(context).changeScreen(index);
 
 }
 
-class DistributorNavigationBar {
+class DistributorNavigation {
   final BuildContext context;
-  DistributorNavigationBar(this.context);
+  DistributorNavigation(this.context);
 
   dynamic _getProvider(BuildContext context) {
-    return Provider.of<ProviderNavigationBar>(context);
+    return Provider.of<ProviderNavigation>(context);
   }
   int get screenIndex => _getProvider(context).selectScreen;
 }

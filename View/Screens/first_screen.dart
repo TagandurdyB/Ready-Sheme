@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../Scaffold/provider_app_bar.dart';
+import '../../ViewModel/Providers/provider_app_bar.dart';
 
 class FirstScreen extends StatelessWidget {
   const FirstScreen({super.key});

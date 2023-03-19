@@ -14,11 +14,11 @@ class MyDrawer extends StatelessWidget {
     this.title,
   });
 
-  late BuildContext contextM;
+  late BuildContext context;
 
   @override
   Widget build(BuildContext context) {
-    contextM = context;
+    this.context = context;
     return Drawer(
       child: Column(children: [
         Container(
@@ -49,18 +49,22 @@ class MyDrawer extends StatelessWidget {
                         },
                         icon: DistributorTheme(context).icons.changeMod),
                   ),
-                  DrawBarBtn(
-                    onTap: () => Navigator.pushNamed(context, Rout.about),
-                    //  titleLeft: SWi * 0.15,
-                    leading: draverIcon(Icons.info),
-                    title: const Text("Barada"),
-                  ),
+                   buildBtn(Rout.about, Icons.info, "Barada"),
                 ],
               ),
             ),
           ),
         )
       ]),
+    );
+  }
+
+  Widget buildBtn(String route, IconData icon, String name) {
+    return DrawBarBtn(
+      onTap: () => Navigator.pushNamed(context, route),
+      //  titleLeft: SWi * 0.15,
+      leading: draverIcon(icon),
+      title: Text(name),
     );
   }
 
@@ -72,7 +76,7 @@ class MyDrawer extends StatelessWidget {
         borderWidth: sizeWidth * 0.003,
         width: sizeWidth * 0.11,
         height: sizeWidth * 0.11,
-        color: DistributorTheme(contextM).colors.canvas,
+        color: DistributorTheme(context).colors.canvas,
         child: Icon(
           icon,
           color: const Color(0xff6A00FF),

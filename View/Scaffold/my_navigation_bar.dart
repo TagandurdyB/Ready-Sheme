@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import '/View/Scaffold/provider_navigation_bar.dart';
+import '/Model/constants_model.dart';
+import '/ViewModel/Providers/provider_theme.dart';
+import '../../ViewModel/Providers/provider_navigation.dart';
 
 class MyBottomNavigationBar extends StatefulWidget {
   const MyBottomNavigationBar({super.key});
@@ -19,47 +21,22 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
           setState(() {
             _selectIndex = index;
           });
-         ProcessNavigationBar(context).screenIndex(index); 
+          ProcessNavigation(context).screenIndex(index);
         },
         type: BottomNavigationBarType.fixed,
         unselectedItemColor: Colors.grey[400],
         selectedItemColor: Colors.white,
-        items: const [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              activeIcon: Icon(
-                Icons.home_rounded,
-                color: Colors.white,
-              ),
-              label: "Home"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.explore_outlined),
-              activeIcon: Icon(
-                Icons.explore,
-                color: Colors.white,
-              ),
-              label: "Explore"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.add_circle_outline),
-              activeIcon: Icon(
-                Icons.add_circle,
-                color: Colors.white,
-              ),
-              label: "Add"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.subscriptions_outlined),
-              activeIcon: Icon(
-                Icons.subscriptions,
-                color: Colors.white,
-              ),
-              label: "Subscriptions"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.video_library_outlined),
-              activeIcon: Icon(
-                Icons.video_library,
-                color: Colors.white,
-              ),
-              label: "Library"),
-        ]);
+        selectedIconTheme: IconThemeData(
+          color: DistributorTheme(context).colors.navigatActiveIcon,
+        ),
+        unselectedIconTheme: IconThemeData(
+          color: DistributorTheme(context).colors.navigatUnactiveIcon,
+        ),
+        items: List.generate(
+            Worlds().navigation.length,
+            (index) => BottomNavigationBarItem(
+                activeIcon: DistributorTheme(context).icons.navigationS[index],
+                icon: DistributorTheme(context).icons.navigationU[index],
+                label: DistributorTheme(context).worlds.navigation[index])));
   }
 }

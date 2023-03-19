@@ -1,4 +1,8 @@
-import '/Model/Icons_model.dart';
+import '/Model/icons_model.dart';
+
+import '../../Model/constants_model.dart';
+import '/Model/icon_data_model.dart';
+
 import '/Model/colors_model.dart';
 import '/Model/shadows_model.dart';
 import '/Model/styles_model.dart';
@@ -17,13 +21,19 @@ class ProviderTheme extends ChangeNotifier {
 
   ThemeColor get colors => _isLight ? ThemeColor() : ThemeDarkColor();
 
-  ThemeStyle get styles => _isLight ? ThemeStyle() : ThemeDarkStyle();
+  LightIconD get iconDatas => _isLight ? LightIconD() : DarkIconD();
 
-  ThemeIcon get icons => _isLight ? ThemeIcon() : ThemeDarkIcon();
+  ThemeIcon get icons => ThemeIcon(themeIcon: iconDatas, themeColor: colors);
+
+  Styles get styles => Styles(themeColor: colors);
+
+  Texts get texts => Texts(themeStyle: styles);
+
+  Worlds get worlds => Worlds();
+
+  Nums get nums => Nums();
 
   ThemeShadows get shadows => _isLight ? ThemeShadows() : ThemeDarkShadows();
-
-  Texts get texts => Texts();
 
   Brightness get brightness => _isLight ? Brightness.dark : Brightness.light;
 }
@@ -49,9 +59,15 @@ class DistributorTheme {
 
   bool get isLight => _getProvider(context).isLight;
   ThemeColor get colors => _getProvider(context).colors;
-  ThemeStyle get styles => _getProvider(context).styles;
+  ThemeColor get iconDs => _getProvider(context).iconDatas;
+
   ThemeIcon get icons => _getProvider(context).icons;
-  ThemeShadows get shadows => _getProvider(context).shadows;
+  Styles get styles => _getProvider(context).styles;
   Texts get texts => _getProvider(context).texts;
+
+  Worlds get worlds => _getProvider(context).worlds;
+  Nums get nums => _getProvider(context).nums;
+
+  ThemeShadows get shadows => _getProvider(context).shadows;
   Brightness get brightness => _getProvider(context).brightness;
 }

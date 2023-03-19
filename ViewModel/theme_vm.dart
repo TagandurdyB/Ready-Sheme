@@ -25,8 +25,8 @@ class MyTheme {
           color: providerTheme.colors.appBar,
           shadowColor: Colors.transparent,
           titleTextStyle: providerTheme.styles.appBar,
-          iconTheme: const IconThemeData(
-            color: Colors.orange,
+          iconTheme: IconThemeData(
+            color: DistributorTheme(context).colors.appBarIcon,
           )),
     );
   }
