@@ -1,7 +1,6 @@
 import '/ViewModel/platform_vm.dart';
 
 import '../../ViewModel/size_vm.dart';
-import '../../ViewModel/Providers/provider_app_bar.dart';
 import '/ViewModel/Providers/provider_theme.dart';
 import 'package:flutter/material.dart';
 import 'my_app_bar.dart';
@@ -13,13 +12,17 @@ class ScaffoldAll extends StatelessWidget {
   final Widget? appBarLeading;
   final bool? appBarCenterTitle;
   final List<Widget>? appBarActions;
+  final List<Widget>? actions;
   final Widget body;
+  final bool bottomBar;
   final GlobalKey<ScaffoldState>? scaffoldKey;
   const ScaffoldAll({
-    this.appBarLeading,
+    this.appBarLeading = const BackButton(),
     this.appBarCenterTitle,
     this.appBarActions,
+    this.actions,
     required this.body,
+    this.bottomBar = true,
     super.key,
     this.scaffoldKey,
   });
@@ -27,11 +30,19 @@ class ScaffoldAll extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     MySize().changeSize(size.width, size.height);
+
+    double bottomHeight = 0.0;
+    if (bottomBar) {
+      bottomHeight = kToolbarHeight + (kToolbarHeight * 0.5);
+    } else {
+      bottomHeight = kToolbarHeight;
+    }
+
     return Scaffold(
       key: scaffoldKey,
       appBar: PreferredSize(
         key: key,
-        preferredSize: Size.fromHeight(DistributorAppBar(context).drawerHeight),
+        preferredSize: Size.fromHeight(bottomHeight),
         child: Container(
           decoration: BoxDecoration(
             color: DistributorTheme(context).colors.appBar,
@@ -45,7 +56,7 @@ class ScaffoldAll extends StatelessWidget {
                 actions: appBarActions,
               ),
               Visibility(
-                visible: DistributorAppBar(context).bottomDrawer,
+                visible: bottomBar, //DistributorAppBar(context).bottomDrawer,
                 child: Expanded(
                     child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -61,7 +72,8 @@ class ScaffoldAll extends StatelessWidget {
         children: [
           Visibility(
               visible: !MyPlatform.isMobil,
-              child: Scrollbar(child: MyNavigationRail(extended: MySize.width >= 800))),
+              child: Scrollbar(
+                  child: MyNavigationRail(extended: MySize.width >= 800))),
           Visibility(
               visible: !MyPlatform.isMobil,
               child: const VerticalDivider(

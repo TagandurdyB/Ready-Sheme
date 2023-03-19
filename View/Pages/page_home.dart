@@ -9,6 +9,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScaffoldAll(
+      appBarLeading: null,
+      bottomBar: false,
       body: HomeScreens()
     );
   }

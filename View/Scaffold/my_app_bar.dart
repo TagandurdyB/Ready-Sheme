@@ -9,7 +9,7 @@ class MyAppBar extends StatelessWidget {
     super.key,
     this.leading,
     this.centerTitle = true,
-    this.actions,
+    this.actions
   });
 
   @override
