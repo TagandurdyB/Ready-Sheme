@@ -16,6 +16,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      backgroundColor: DistributorTheme(context).colors.appBar,
         currentIndex: _selectIndex,
         onTap: (index) {
           setState(() {

@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 class MyContainer extends StatelessWidget {
   final Widget? child;
   final double? width;
+  final Duration duration;
   final double? height;
   final double shape;
   final double borderWidth;
   final Color? color;
-   final Color borderColor;
+  final Color borderColor;
   final List<Color>? colors;
+  final List<BoxShadow>? boxShadow;
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry? margin;
   final Alignment? alignment;
@@ -17,6 +19,8 @@ class MyContainer extends StatelessWidget {
   final Function? onTap;
   const MyContainer(
       {super.key,
+      this.boxShadow,
+      this.duration = Duration.zero,
       this.child,
       this.width,
       this.height,
@@ -36,22 +40,22 @@ class MyContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap != null ? () => onTap!() : null,
-      child: Container(
+      child: AnimatedContainer(
+        duration: duration,
         padding: padding,
         margin: margin,
         alignment: alignment,
         width: width,
         height: height,
         decoration: BoxDecoration(
-         shape: BoxShape.rectangle,
-              // ignore: unnecessary_null_comparison
-              border: borderWidth == null
-                  ? null
-                  : Border.all(width: borderWidth, color: borderColor),
-              borderRadius: BorderRadius.all(Radius.circular(shape) 
-                  ),
+            boxShadow: boxShadow,
+            shape: BoxShape.rectangle,
+            // ignore: unnecessary_null_comparison
+            border: borderWidth == null
+                ? null
+                : Border.all(width: borderWidth, color: borderColor),
+            borderRadius: BorderRadius.all(Radius.circular(shape)),
             color: colors == null ? color : null,
-           
             gradient: colors != null
                 ? LinearGradient(
                     begin: gradientBegin ?? Alignment.topLeft,
