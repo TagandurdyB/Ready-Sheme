@@ -1,5 +1,5 @@
-import 'package:audio/ViewModel/Providers/provider_theme.dart';
-import 'package:audio/ViewModel/size_vm.dart';
+import '/ViewModel/Providers/provider_theme.dart';
+import '/ViewModel/size_vm.dart';
 import 'package:flutter/material.dart';
 
 import '../Widgets/my_container.dart';
